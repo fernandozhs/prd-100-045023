@@ -1,9 +1,7 @@
-F. Zago & A. Kosowsky – Quantum particle production effects on the cosmic expansion ([Phys. Rev. D 100, 045023](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.045023)).
+# [Quantum Particle Production Effects on Cosmic Expansion](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.045023)
 
-# Quantum Particle Production Effects on Cosmic Expansion
-
-**Authors:** Fernando Zago, Arthur Kosowsky  
-**Affiliation:** Department of Physics and Astronomy, University of Pittsburgh, Pittsburgh, PA 15260 USA, and Pittsburgh Particle Physics, Astrophysics, and Cosmology Center (PITT PACC), Pittsburgh PA 15260
+**Authors:** [Fernando Zago](mailto:fernandozhs@gmail.com), [Arthur Kosowsky](mailto:kosowsky@pitt.edu)  
+**Affiliation:** Department of Physics and Astronomy, University of Pittsburgh, Pittsburgh, PA 15260 USA, and Pittsburgh Particle Physics, Astrophysics, and Cosmology Center (PITT PACC), Pittsburgh, PA 15260
 
 
 ## Abstract
@@ -37,7 +35,7 @@ $$
 with
 
 $$
-g_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j} =\frac{\mathrm{d}r^{2}}{1 - K r^{2}} + r^{2} \mathrm{d}\theta^{2} + r^{2} \sin^{2}\theta \, \mathrm{d}\varphi^{2}
+g_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j} =\frac{\mathrm{d}r^{2}}{1 - K r^{2}} + r^{2} \mathrm{d}\theta^{2} + r^{2} \sin^{2}\theta \mathrm{d}\varphi^{2}
 $$
 
 Here $a(t)$ is the scale factor which describes the cosmological expansion history, and $K = -1$ , $0$ , $+1$ corresponds to the curvature parameter of an open, flat, and closed Universe, respectively.
@@ -86,17 +84,19 @@ $$
 
 where the raising and lowering operators $a_{\mathbf{k}}^{\dagger}$ and $a_{\mathbf{k}}^{\phantom{\dagger}}$ satisfy the canonical commutation relations
 
-\begin{equation}\label{Eq. Commutation Relations}
+$$
 \left[ a_{\mathbf{k}}^{\phantom{\dagger}} \, , a_{\mathbf{k^{\prime}}}^{\dagger} \right] = \delta_{\mathbf{k},\, \mathbf{k^{\prime}}} \, ,
-\end{equation}
+$$
+
 and $\mathrm{d}\mu(k)$ is a geometry-dependent integration measure given by 
-\begin{equation}\label{Eq. Integration Measure}
-	\int \mathrm{d}\mu(k) =
-	\left\{\begin{aligned}
-			&\sum_{k=1}^{\infty} k^2\, , && \text{for } K = +1 \\
-			&\int_{0}^{\infty} k^2 \,\mathrm{d}k \, , && \text{for } K = 0,\,-1 \, .
-		\end{aligned}\right.
-\end{equation}
+
+$$
+\int \mathrm{d}\mu(k) =
+\left\{\begin{align}
+&\sum_{k=1}^{\infty} k^2 && \text{for } K = +1 \\
+&\int_{0}^{\infty} k^2 \mathrm{d}k && \text{for } K = 0,-1
+end{align}\right.
+$$
 
 The functions $Y_\mathbf{k}(\mathbf{x})$ and $f_k(t)$ contain the spatial and temporal dependence of each $\mathbf{k}$-mode. The harmonic functions $Y_\mathbf{k}(\mathbf{x})$ are eigenfunctions of the Laplace-Beltrami operator associated with the geometry of spatial hypersurfaces, while the mode functions $f_k(t)$ obey the harmnonic oscillator equation
 \begin{equation}\label{Eq. Mode Equation}
