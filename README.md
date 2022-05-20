@@ -22,7 +22,7 @@ Formal developments clarified aspects of the adiabatic regularization approach, 
 
 We combine these recent results into an approach which numerically solves the quantum back-reaction problem in regimes with field energy density dominated by particle production. We then apply this technique to a toy cosmological model, that of a positive-curvature spacetime with a constant energy density (the closed de Sitter model). In the absence of any quantum fields or other particle content, this spacetime exhibits a bounce behavior, contracting to a minimum scale factor and then expanding again. Here we show explicitly that the existence of a massive scalar field in a particular mass range will cause large changes in the spacetime evolution: even if the contracting spacetime initially contains a quantum field in its adiabatic vacuum state, quantum particle production can create enough energy density to push the spacetime into a radiation crunch. Special values of the field mass can also delay but not eliminate the bounce. This appears to be the first general solution for the quantum back-reaction problem in cosmology.
 
-In [Section II](#ii.-scalar-fields-in-flrw-spacetimes) we review standard results for quantized scalar fields propagating in cosmological spacetimes, while [Section III](#iii.-adiabatic-representation) discusses the adiabatic field representation and the semi-classical notion of adiabatic particle number. [Section IV](#iv.-particle-production-and-the-stokes-phenomenon) recasts quantum particle production in terms of the Stokes phenomenon of the complex-plane wave equation for specific modes, including interference between different modes. [Section V](#v.-the-semi-classical-einstein-equations) formulates the back-reaction problem for scenarios in which the field particle content or particle production dominates the field energy density. [Section VI](#vi.-numerical-implementation) outlines our numerical implementation of the mathematical results in Sections IV and V. Physical results for a closed de Sitter model are presented in [Section VII](#vii.-numerical-results). Finally, in [Section VIII](#viii.-discussion) we discuss the prospects for more general situations, including quantum fields with spin and interacting quantum fields, and the possible relevance of quantum particle production to early-Universe models, including inflationary and bounce scenarios. Salient technical details are summarized in the [Appendix](#appendix). Natural units with $\hbar = c = 1$ are adopted throughout.
+In [Section II](#ii-scalar-fields-in-flrw-spacetimes) we review standard results for quantized scalar fields propagating in cosmological spacetimes, while [Section III](#iii-adiabatic-representation) discusses the adiabatic field representation and the semi-classical notion of adiabatic particle number. [Section IV](#iv-particle-production-and-the-stokes-phenomenon) recasts quantum particle production in terms of the Stokes phenomenon of the complex-plane wave equation for specific modes, including interference between different modes. [Section V](#v-the-semi-classical-einstein-equations) formulates the back-reaction problem for scenarios in which the field particle content or particle production dominates the field energy density. [Section VI](#vi-numerical-implementation) outlines our numerical implementation of the mathematical results in Sections IV and V. Physical results for a closed de Sitter model are presented in [Section VII](#vii-numerical-results). Finally, in [Section VIII](#viii-discussion) we discuss the prospects for more general situations, including quantum fields with spin and interacting quantum fields, and the possible relevance of quantum particle production to early-Universe models, including inflationary and bounce scenarios. Salient technical details are summarized in the [Appendix](#appendix). Natural units with $\hbar = c = 1$ are adopted throughout.
 
 
 ## II. Scalar Fields in FLRW Spacetimes
@@ -44,8 +44,10 @@ Here $a(t)$ is the scale factor which describes the cosmological expansion histo
 The non-vanishing components of the Ricci tensor $R_{ab}$ are
 
 $$
+\begin{align}
 R_{00}(t) &= 3\Big[ \dot{H}(t) + H^{2}(t) \Big] g_{00} \\
 R_{ij}(t) &= \Big[ \dot{H}(t) + 3 H^{2}(t) + 2K/a^{2}(t) \Big] g_{ij}
+\end{align}
 $$
 
 and the Ricci scalar $R = g^{ab}R_{ab}$ is
@@ -79,7 +81,7 @@ where $\Box = g^{ab}\nabla_{a}\nabla_{b}$ is the d'Alembert operator associated 
 Due to the homogeneity and isotropy of the background metric, the solutions of Eq.~(\ref{Eq. Field Equation of Motion}) can be separated into purely temporal and spatial parts. As a consequence, the quantized field operator can be written as
 
 $$
-\hat{\Phi}(t,\, \mathbf{x})=a^{-3/2}(t) \! \int \mathrm{d}\mu(k) \Big[ a_{\mathbf{k}}^{\phantom{\dagger}}f_{k}(t)Y_{\mathbf{k}}(\mathbf{x}) + a_{\mathbf{k}}^{\dagger}f_{k}^{\ast}(t)Y_{\mathbf{k}}^{\ast}(\mathbf{x}) \Big]
+\hat{\Phi}(t, \mathbf{x})=a^{-3/2}(t) \int \mathrm{d}\mu(k) \Big[ a_{\mathbf{k}}^{\phantom{\dagger}}f_{k}(t)Y_{\mathbf{k}}(\mathbf{x}) + a_{\mathbf{k}}^{\dagger}f_{k}^{\ast}(t)Y_{\mathbf{k}}^{\ast}(\mathbf{x}) \Big]
 $$
 
 where the raising and lowering operators $a_{\mathbf{k}}^{\dagger}$ and $a_{\mathbf{k}}^{\phantom{\dagger}}$ satisfy the canonical commutation relations
