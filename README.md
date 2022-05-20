@@ -2,7 +2,7 @@ F. Zago & A. Kosowsky – Quantum particle production effects on the cosmic expa
 
 # Quantum Particle Production Effects on Cosmic Expansion
 
-**Authors:** Fernando Zago, Arthur Kosowsky
+**Authors:** Fernando Zago, Arthur Kosowsky  
 **Affiliation:** Department of Physics and Astronomy, University of Pittsburgh, Pittsburgh, PA 15260 USA, and Pittsburgh Particle Physics, Astrophysics, and Cosmology Center (PITT PACC), Pittsburgh PA 15260
 
 
@@ -10,7 +10,7 @@ F. Zago & A. Kosowsky – Quantum particle production effects on the cosmic expa
 Quantum fields in cosmological spacetimes can experience particle production due to their interaction with the expanding background. This effect is particularly relevant for models of the very early Universe, when the energy density generated through this process may back-react on the cosmological expansion. Yet, these scenarios have not been fully explored due to the several technical hurdles imposed by the back-reaction calculations. In this work we review the basics of cosmological quantum particle production and demonstrate a numerical algorithm to solve the back-reaction problem in regimes dominated by particle production. As an illustration, we compute the effects of a massive quantized scalar field on a cosmological bounce scenario, explicitly showing that quantum particle production can cause the contracting phase to end in a radiation crunch, or can delay the bounce. Finally, we discuss the relevance of quantum particle production/annihilation to bounce and inflationary models of the early Universe.
 
 
-## Introduction
+## I. Introduction
 
 In his pioneering 1968 Ph.D. thesis, Leonard Parker discovered the surprising phenomenon that evolving cosmological spacetimes can produce quantum particles \cite{Parker69, Parker71, ZeldovichStarobinsky77}. This work laid much of the theoretical framework for our current understanding of quantum fields in curved spacetimes (see, e.g., the textbooks \cite{ParkerToms09, BirrellDavies82}). The phenomenon has since been investigated in  astrophysical and cosmological contexts, leading to fundamental theoretical results including the emission of Hawking radiation by blackholes \cite{Hawking75, Unruh76, Davies76, Page82, Brown86, Frolov87, Anderson93, Anderson94, Anderson95}. and the generation of primordial fluctuations during inflation \cite{Starobinsky79, Allen88, Sahni90, Mukhanov92, Souradeep92, Glenz09, Agullo11}.
 
@@ -22,10 +22,10 @@ Formal developments clarified aspects of the adiabatic regularization approach, 
 
 We combine these recent results into an approach which numerically solves the quantum back-reaction problem in regimes with field energy density dominated by particle production. We then apply this technique to a toy cosmological model, that of a positive-curvature spacetime with a constant energy density (the closed de Sitter model). In the absence of any quantum fields or other particle content, this spacetime exhibits a bounce behavior, contracting to a minimum scale factor and then expanding again. Here we show explicitly that the existence of a massive scalar field in a particular mass range will cause large changes in the spacetime evolution: even if the contracting spacetime initially contains a quantum field in its adiabatic vacuum state, quantum particle production can create enough energy density to push the spacetime into a radiation crunch. Special values of the field mass can also delay but not eliminate the bounce. This appears to be the first general solution for the quantum back-reaction problem in cosmology.
 
-In Section II we review standard results for quantized scalar fields propagating in cosmological spacetimes, while Section III discusses the adiabatic field representation and the semi-classical notion of adiabatic particle number. Section IV recasts quantum particle production in terms of the Stokes phenomenon of the complex-plane wave equation for specific modes, including interference between different modes. Section V formulates the back-reaction problem for scenarios in which the field particle content or particle production dominates the field energy density. Section VI outlines our numerical implementation of the mathematical results in Sections IV and V. Physical results for a closed de Sitter model are presented in Section VII. Finally, in Section VIII we discuss the prospects for more general situations, including quantum fields with spin and interacting quantum fields, and the possible relevance of quantum particle production to early-Universe models, including inflationary and bounce scenarios. Salient technical details are summarized in the Appendix. Natural units with $\hbar = c = 1$ are adopted throughout.
+In [Section II](#ii.-scalar-fields-in-flrw-spacetimes) we review standard results for quantized scalar fields propagating in cosmological spacetimes, while [Section III](#iii.-adiabatic-representation) discusses the adiabatic field representation and the semi-classical notion of adiabatic particle number. [Section IV](#iv.-particle-production-and-the-stokes-phenomenon) recasts quantum particle production in terms of the Stokes phenomenon of the complex-plane wave equation for specific modes, including interference between different modes. [Section V](#v.-the-semi-classical-einstein-equations) formulates the back-reaction problem for scenarios in which the field particle content or particle production dominates the field energy density. [Section VI](#vi.-numerical-implementation) outlines our numerical implementation of the mathematical results in Sections IV and V. Physical results for a closed de Sitter model are presented in [Section VII](#vii.-numerical-results). Finally, in [Section VIII](#viii.-discussion) we discuss the prospects for more general situations, including quantum fields with spin and interacting quantum fields, and the possible relevance of quantum particle production to early-Universe models, including inflationary and bounce scenarios. Salient technical details are summarized in the [Appendix](#appendix). Natural units with $\hbar = c = 1$ are adopted throughout.
 
 
-## Scalar Fields in FLRW Spacetimes
+## II. Scalar Fields in FLRW Spacetimes
 
 We first summarize basic results for scalar fields in spatially isotropic and homogeneous spacetimes (see, e.g., \cite{ParkerToms09, BirrellDavies82}). 
 Consider a Universe described by the Friedmann-Lemaître-Robertson-Walker (FLRW) metric
@@ -44,7 +44,7 @@ Here $a(t)$ is the scale factor which describes the cosmological expansion histo
 The non-vanishing components of the Ricci tensor $R_{ab}$ are
 
 $$
-R_{00}(t) &= 3\Big[ \dot{H}(t) + H^{2}(t) \Big] g_{00}
+R_{00}(t) &= 3\Big[ \dot{H}(t) + H^{2}(t) \Big] g_{00} \\
 R_{ij}(t) &= \Big[ \dot{H}(t) + 3 H^{2}(t) + 2K/a^{2}(t) \Big] g_{ij}
 $$
 
@@ -64,23 +64,26 @@ is the Hubble parameter. Overdots indicate differentiation with respect to prope
 
 We are interested in the evolution of a free scalar field $\Phi(t,\, \mathbf{x})$ of arbitrary mass and curvature coupling in this spacetime. The action for such a field can be expressed generically as
 
-\begin{align}\label{Eq. Field Action}
-	S = -\frac{1}{2} \int \sqrt{-g} \, \mathrm{d}^{4}x \Big[ \big( \nabla_{a} \Phi \big) g^{ab} \big( \nabla_{b} \Phi \big) + \Big. & \\
-	 \Big. + m^{2} \Phi^{2} + \xi R \Phi^{2} \Big] & \, , \nonumber
-\end{align}
+$$
+S = -\frac{1}{2} \int \sqrt{-g} \mathrm{d}^{4}x \Big[ \big( \nabla_{a} \Phi \big) g^{ab} \big( \nabla_{b} \Phi \big) + m^{2} \Phi^{2} + \xi R \Phi^{2} \Big]
+$$
+
 where $\nabla_{a}$ is the covariant derivative, $g = \det{(g_{ab})}$, $m$ is the field mass, and $\xi$ is the field coupling to the spacetime curvature. Applying the variational principle to this action yields the equation of motion 
-\begin{equation}\label{Eq. Field Equation of Motion}
-	\Big[ \Box - m^{2} - \xi R(t) \Big]\Phi(t,\, \mathbf{x}) = 0 \, ,
-\end{equation}
+
+$$
+\Big[ \Box - m^{2} - \xi R(t) \Big]\Phi(t, \mathbf{x}) = 0
+$$
+
 where $\Box = g^{ab}\nabla_{a}\nabla_{b}$ is the d'Alembert operator associated with the spacetime.
 
-Due to the homogeneity and isotropy of the background metric, the solutions of Eq.~(\ref{Eq. Field Equation of Motion}) 
-can be separated into purely temporal and spatial parts. As a consequence, the quantized field operator can be written as
-\begin{align}\label{Eq. Field}
-	\hat{\Phi}(t,\, \mathbf{x})=a^{-3/2}(t) \! \int \mathrm{d}\mu(k) \Big[ a_{\mathbf{k}}^{\phantom{\dagger}}f_{k}(t)Y_{\mathbf{k}}(\mathbf{x}) + \Big. & \\
-	\Big. + a_{\mathbf{k}}^{\dagger}f_{k}^{\ast}(t)Y_{\mathbf{k}}^{\ast}(\mathbf{x}) \Big] & \, , \nonumber
-\end{align}
+Due to the homogeneity and isotropy of the background metric, the solutions of Eq.~(\ref{Eq. Field Equation of Motion}) can be separated into purely temporal and spatial parts. As a consequence, the quantized field operator can be written as
+
+$$
+\hat{\Phi}(t,\, \mathbf{x})=a^{-3/2}(t) \! \int \mathrm{d}\mu(k) \Big[ a_{\mathbf{k}}^{\phantom{\dagger}}f_{k}(t)Y_{\mathbf{k}}(\mathbf{x}) + a_{\mathbf{k}}^{\dagger}f_{k}^{\ast}(t)Y_{\mathbf{k}}^{\ast}(\mathbf{x}) \Big]
+$$
+
 where the raising and lowering operators $a_{\mathbf{k}}^{\dagger}$ and $a_{\mathbf{k}}^{\phantom{\dagger}}$ satisfy the canonical commutation relations
+
 \begin{equation}\label{Eq. Commutation Relations}
 \left[ a_{\mathbf{k}}^{\phantom{\dagger}} \, , a_{\mathbf{k^{\prime}}}^{\dagger} \right] = \delta_{\mathbf{k},\, \mathbf{k^{\prime}}} \, ,
 \end{equation}
@@ -92,6 +95,7 @@ and $\mathrm{d}\mu(k)$ is a geometry-dependent integration measure given by
 			&\int_{0}^{\infty} k^2 \,\mathrm{d}k \, , && \text{for } K = 0,\,-1 \, .
 		\end{aligned}\right.
 \end{equation}
+
 The functions $Y_\mathbf{k}(\mathbf{x})$ and $f_k(t)$ contain the spatial and temporal dependence of each $\mathbf{k}$-mode. The harmonic functions $Y_\mathbf{k}(\mathbf{x})$ are eigenfunctions of the Laplace-Beltrami operator associated with the geometry of spatial hypersurfaces, while the mode functions $f_k(t)$ obey the harmnonic oscillator equation
 \begin{equation}\label{Eq. Mode Equation}
 \ddot{f}_{k}(t) + \Omega_{k}^{2}(t) f_{k}(t) = 0 \, 
