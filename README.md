@@ -32,13 +32,13 @@ Consider a Universe described by the Friedmann-Lemaître-Robertson-Walker (FLRW)
 
 $$
 \mathrm{d}s^{2} = g_{ab}\mathrm{d}x^{a}\mathrm{d}x^{b} = -\mathrm{d}t^{2} + a^{2}(t) g_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}
-$$ ,
+$$
 
 with
 
 $$
 g_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j} =\frac{\mathrm{d}r^{2}}{1 - K r^{2}} + r^{2} \mathrm{d}\theta^{2} + r^{2} \sin^{2}\theta \, \mathrm{d}\varphi^{2}
-$$ .
+$$
 
 Here $a(t)$ is the scale factor which describes the cosmological expansion history, and $K = -1$ , $0$ , $+1$ corresponds to the curvature parameter of an open, flat, and closed Universe, respectively.
 The non-vanishing components of the Ricci tensor $R_{ab}$ are
@@ -46,13 +46,13 @@ The non-vanishing components of the Ricci tensor $R_{ab}$ are
 $$
 R_{00}(t) &= 3\Big[ \dot{H}(t) + H^{2}(t) \Big] g_{00}
 R_{ij}(t) &= \Big[ \dot{H}(t) + 3 H^{2}(t) + 2K/a^{2}(t) \Big] g_{ij}
-$$ ,
+$$
 
 and the Ricci scalar $R = g^{ab}R_{ab}$ is
 
 $$
 R(t) = 6 \Big[ \dot{H}(t) + 2 H^{2}(t) + K/a^{2}(t) \Big]
-$$ ,
+$$
 
 where
 
