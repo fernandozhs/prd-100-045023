@@ -85,74 +85,86 @@ $$
 where the raising and lowering operators $a_{\mathbf{k}}^{\dagger}$ and $a_{\mathbf{k}}^{\phantom{\dagger}}$ satisfy the canonical commutation relations
 
 $$
-\left[ a_{\mathbf{k}}^{\phantom{\dagger}} \, , a_{\mathbf{k^{\prime}}}^{\dagger} \right] = \delta_{\mathbf{k},\, \mathbf{k^{\prime}}} \, ,
+\left[ a_{\mathbf{k}}^{\phantom{\dagger}}, a_{\mathbf{k^{\prime}}}^{\dagger} \right] = \delta_{\mathbf{k}, \mathbf{k^{\prime}}}
 $$
 
-and $\mathrm{d}\mu(k)$ is a geometry-dependent integration measure given by 
+and $\mathrm{d}\mu(k)$ is a geometry-dependent integration measure given by $\sum_{k=1}^{\infty} k^2$ when $K = +1$ , and by $\int_{0}^{\infty} k^2 \mathrm{d}k$ when $K = 0$ , $-1$ .
+
+The functions $Y_\mathbf{k}(\mathbf{x})$ and $f_k(t)$ contain the spatial and temporal dependence of each $\mathbf{k}$-mode. The harmonic functions $Y_\mathbf{k}(\mathbf{x})$ are eigenfunctions of the Laplace-Beltrami operator associated with the geometry of spatial hypersurfaces, while the mode functions $f_k(t)$ obey the harmonnic oscillator equation
 
 $$
-\int \mathrm{d}\mu(k) =
-\left\{\begin{align}
-&\sum_{k=1}^{\infty} k^2 && \text{for } K = +1 \\
-&\int_{0}^{\infty} k^2 \mathrm{d}k && \text{for } K = 0,-1
-end{align}\right.
+\ddot{f}_{k}(t) + \Omega_{k}^{2}(t) f_{k}(t) = 0
 $$
 
-The functions $Y_\mathbf{k}(\mathbf{x})$ and $f_k(t)$ contain the spatial and temporal dependence of each $\mathbf{k}$-mode. The harmonic functions $Y_\mathbf{k}(\mathbf{x})$ are eigenfunctions of the Laplace-Beltrami operator associated with the geometry of spatial hypersurfaces, while the mode functions $f_k(t)$ obey the harmnonic oscillator equation
-\begin{equation}\label{Eq. Mode Equation}
-\ddot{f}_{k}(t) + \Omega_{k}^{2}(t) f_{k}(t) = 0 \, 
-\end{equation}
 with the time-dependent frequency function 
-\begin{equation}\label{Eq. Mode Frequency}
-\Omega_{k}^{2}(t) = \omega_{k}^{2}(t) + \bigg( \xi - \frac{1}{6} \bigg) R(t) - \Bigg[ \frac{\dot{H}(t)}{2} + \frac{H^{2}(t)}{4} \Bigg] \, ,
-\end{equation}
+
+$$
+\Omega_{k}^{2}(t) = \omega_{k}^{2}(t) + \bigg( \xi - \frac{1}{6} \bigg) R(t) - \Bigg[ \frac{\dot{H}(t)}{2} + \frac{H^{2}(t)}{4} \Bigg]
+$$
+
 where
-\begin{equation}\label{Eq. Minkowski Frequency}
-	 \omega_{k}(t) = \Bigg[\frac{k^{2}}{a^{2}(t)} + m^{2}\Bigg]^{\!1/2} \, .
-\end{equation}
+
+$$
+\omega_{k}(t) = \Bigg[\frac{k^{2}}{a^{2}(t)} + m^{2}\Bigg]^{1/2}
+$$
+
 The complex mode functions $f_{k}(t)$ and $f^{\ast}_{k}(t)$ also satisfy the Wronskian condition
-\begin{equation}\label{Eq. Wronskian Condition}
-f_{k}(t)\dot{f}^{\ast}_{k}(t) - \dot{f}_{k}(t) f^{\ast}_{k}(t) = i \, .
-\end{equation}
-If Eq.~(\ref{Eq. Wronskian Condition}) holds at some particular time $t$, then Eq.~(\ref{Eq. Mode Equation}) guarantees it will also hold at all future
-times.
+
+$$
+f_{k}(t)\dot{f}^{\ast}_{k}(t) - \dot{f}_{k}(t) f^{\ast}_{k}(t) = i
+$$
+
+If Eq.~(\ref{Eq. Wronskian Condition}) holds at some particular time $t$, then Eq.~(\ref{Eq. Mode Equation}) guarantees it will also hold at all future times.
 
 The quantization procedure outlined above naturally leads to the construction of the Fock space of field states. The base element of this space is the vacuum state, which is defined as the normalized state that is annihilated by all lowering operators:
-\begin{equation}\label{Eq. Vacuum}
-a_{\mathbf{k}}^{\phantom{\dagger}} \left| 0 \right\rangle = 0 \ \ \mathrm{and} \ \ \left\langle 0 | 0 \right\rangle = 1 \, .
-\end{equation}
+
+$$
+a_{\mathbf{k}}^{\phantom{\dagger}} \left| 0 \right\rangle = 0 \ \ \mathrm{and} \ \ \left\langle 0 | 0 \right\rangle = 1
+$$
+
 All remaining states are generated from the vacuum by the successive application of raising operators, such as
-\begin{equation}
-\left| \mathbf{k}_1 ,\, \mathbf{k}_2 ,\, \dots \right\rangle = a_{\mathbf{k}_1}^{\dagger} a_{\mathbf{k}_2}^{\dagger} \dots \left| 0 \right\rangle \, ,
-\end{equation}
+
+$$
+\left| \mathbf{k}_1 , \mathbf{k}_2 , \dots \right\rangle = a_{\mathbf{k}_1}^{\dagger} a_{\mathbf{k}_2}^{\dagger} \dots \left| 0 \right\rangle
+$$
+
 and normalized by the requirement of mutual orthonormality. In what follows, we will be interested in the family of field states which are spatially isotropic and homogeneous, as these constitute viable sources of the FLRW metric.
 
 The field operator $\hat{\Phi}(t,\, \mathbf{x})$ admits numerous representations of the form shown in Eq.~(\ref{Eq. Field}), each of which is associated with a different mode function pertaining to the set of solutions of Eq.~(\ref{Eq. Mode Equation}). These representations are related: the complex mode functions $f_{k}(t)$ and $h_{k}(t)$ belonging to any two different representations can be expressed in terms of one another through the Bogolyubov transformations
-\begin{subequations}\label{Eq. Bogolyubov Modes}
+
+$$
 \begin{align}
-	{f}_{k}(t) &= \alpha_{k}h_{k}(t) + \beta_{k}h^{\ast}_{k}(t) \, ,\\[8pt]
-	{f}_{k}^{\ast}(t) &= \beta_{k}^{\ast}h_{k}(t) + \alpha_{k}^{\ast}h^{\ast}_{k}(t) \, ,
+{f}_{k}(t) &= \alpha_{k}h_{k}(t) + \beta_{k}h^{\ast}_{k}(t) \\
+{f}_{k}^{\ast}(t) &= \beta_{k}^{\ast}h_{k}(t) + \alpha_{k}^{\ast}h^{\ast}_{k}(t)
 \end{align}
-\end{subequations}
+$$
+
 where $\alpha_{k}$ and $\beta_{k}$ are known as Bogolyubov coefficients. Due to homogeneity and isotropy, these coefficients depend only on ${k = \left| \mathbf{k} \right|}$. Substituting these expressions into Eq.~(\ref{Eq. Field}) leads to similar transformations relating the raising and lowering operators belonging to these representations:
-\begin{subequations}\label{Eq. Bogolyubov Operators}
+
+$$
 \begin{align}
-a_{\mathbf{k}}^{\phantom{\dagger}} &= \alpha_{k}^{\ast} b_{\mathbf{k}}^{\phantom{\dagger}} - \beta_{k}^{\ast} b_{\mathbf{k}}^\dagger\, , \\[8pt]
-a_{\mathbf{k}}^\dagger &= \alpha_{k} b_{\mathbf{k}}^\dagger - \beta_{k} b_{\mathbf{k}}^{\phantom{\dagger}} \, ,
+a_{\mathbf{k}}^{\phantom{\dagger}} &= \alpha_{k}^{\ast} b_{\mathbf{k}}^{\phantom{\dagger}} - \beta_{k}^{\ast} b_{\mathbf{k}}^\dagger \\
+a_{\mathbf{k}}^\dagger &= \alpha_{k} b_{\mathbf{k}}^\dagger - \beta_{k} b_{\mathbf{k}}^{\phantom{\dagger}}
 \end{align}
-\end{subequations}
+$$
+
 from which it follows that the Bogolyubov coefficients must satisfy
-\begin{equation}\label{Eq. Bogolyubov Constraint}
-	\big| \alpha_{k} \big|^{2} - \big| \beta_{k} \big|^{2} = 1 \,
-\end{equation}
+
+$$
+\big| \alpha_{k} \big|^{2} - \big| \beta_{k} \big|^{2} = 1
+$$
 in order to guarantee that the commutation relations of Eq.~(\ref{Eq. Commutation Relations}) are valid across all representations.
 
 A direct consequence of Eqs.~(\ref{Eq. Bogolyubov Operators}) is that the notion of vacuum is not unique for a quantized field defined on a FLRW spacetime \cite{BirrellDavies82, ParkerToms09}. This is evident from the following simple calculation, which shows that the vacuum defined in Eq.~(\ref{Eq. Vacuum}) is not necessarily devoid of particles according to the number operator belonging to a different field representation:
+
+$$
 \begin{align}
-	\mathcal{N}_{k} &= \big\langle 0 \big| b_{\mathbf{k}}^{\dagger} b_{\mathbf{k}}^{\phantom{\dagger}} \big| 0 \big\rangle \nonumber \\
-	&= \big| \alpha_{k} \big|^{2} \big\langle 0 \big| a_{\mathbf{k}}^{\dagger} a_{\mathbf{k}}^{\phantom{\dagger}}  \big| 0 \big\rangle + \big| \beta_{k} \big|^{2} \big\langle 0 \big| a_{\mathbf{k}}^{\phantom{\dagger}} a_{\mathbf{k}}^\dagger \big| 0 \big\rangle \\
-	&= \big| \beta_{k} \big|^{2} \nonumber \, .
+\mathcal{N}_{k} &= \big\langle 0 \big| b_{\mathbf{k}}^{\dagger} b_{\mathbf{k}}^{\phantom{\dagger}} \big| 0 \big\rangle \nonumber \\
+&= \big| \alpha_{k} \big|^{2} \big\langle 0 \big| a_{\mathbf{k}}^{\dagger} a_{\mathbf{k}}^{\phantom{\dagger}}  \big| 0 \big\rangle + \big| \beta_{k} \big|^{2} \big\langle 0 \big| a_{\mathbf{k}}^{\phantom{\dagger}} a_{\mathbf{k}}^\dagger \big| 0 \big\rangle \\
+&= \big| \beta_{k} \big|^{2}
 \end{align}
+$$
+
 Therefore, different choices of representation inevitably lead to distinct notions of vacuum and, consequently, to distinct notions of particle. This result is a quite general feature of quantum field theory defined on curved spacetimes, and although it initially seems troublesome, it actually becomes useful in numerical back-reaction calculations. To that end, we introduce in the next section a particularly useful representation which defines the most physical notion of particle in a FLRW spacetime.
 
 \section{Adiabatic Representation}\label{Sec. Adiabatic Representation}
